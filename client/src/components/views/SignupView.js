@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 import Copyright from "../Copyright";
 import ErrorAlert from "../ErrorAlert";
 import { isLength, isEmail, contains } from "validator";
+import Logo from "./../../assets/Logo.png"
+
 
 const SignupView = () => {
   const navigate = useNavigate();
@@ -76,7 +78,7 @@ const SignupView = () => {
       <Stack alignItems="center">
         <Typography variant="h2" color="text.secondary" sx={{ mb: 6 }}>
           <Link href="/" color="inherit" underline="none">
-            PostIt
+          <img className="img-fluid" src={Logo} />
           </Link>
         </Typography>
         <Typography variant="h5" gutterBottom>
