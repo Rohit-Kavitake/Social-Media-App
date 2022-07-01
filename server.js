@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require("path");
+const morgan = require('morgan');
 const app = express();
 const { authSocket, socketServer } = require("./socketServer");
 const posts = require("./routes/posts");
@@ -13,6 +14,8 @@ const PostLike = require("./models/PostLike");
 const Post = require("./models/Post");
 
 dotenv.config();
+app.use(morgan('dev'));
+
 
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
